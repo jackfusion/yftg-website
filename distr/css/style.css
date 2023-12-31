@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600;700&family=Permanent+Marker&family=Trade+Winds&display=swap');
+
+:root{
+  --yale-blue: #134074ff;
+--berkeley-blue: #13315cff;
+--oxford-blue: #0b2545ff;
+--powder-blue: #8da9c4ff;
+--mint-cream: #eef4edff;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Alkatra", serif;
+}
+
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+.text-secondary {
+  color: var(--mint-cream);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.subtitle-project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.text-align{
+    font-size: 1.5em;
+    line-height: 2em;
+    margin: 5%;
+    width: 90%;
+}
+
+.title {
+  font-weight: 600;
+  text-align: center;
+  font-size: 2.5em;
+  padding-bottom: 1em;
+}
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2em;
+  z-index: 999;
+  transition: 0.6s;
+  background-color: var(--yale-blue);
+}
+
+header ul {
+  padding-top: 1em;
+}
+
+ul li text-secondary title responsive-text {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+header .brand-container {
+    display: flex;
+    align-items: center;
+}
+
+header .text-container {
+    margin-left: 20px; /* Add margin for spacing between the image and text */
+}
+
+header .text-secondary {
+    font-size: 2em; /* Adjusted font size for the role */
+    font-weight: 500;
+    color: var(--mint-cream);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+header.sticky{
+  background-color: var(--yale-blue);
+}
+
+.logo{
+    width: 15em;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+}
+
+header .brand{
+    font-size: 2.7em; /* Adjusted font size for the name */
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: var(--mint-cream);
+    padding: 0 0.8em;
+}
+
+header .menu{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2em;
+}
+
+header .menu a{
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 5px;
+  padding: .3em .3em;
+  text-transform: uppercase;
+  border-radius: 15px;
+  color: var(--mint-cream);
+  transition: 0.3s;
+  transition-property: color, background;
+}
+
+header .menu a:hover{
+  color: var(--powder-blue);
+}
+
+header .btn{
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+}
+
+.top{
+    height: 14em;
+}
+
+.section-main{
+  width: 100%;
+  height: auto;
+}
+
+.resume-area, .projects-area{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.projects {
+  padding-bottom: 2rem;
+}
+
+.projects__bio-image {
+  height: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.projects__bio-image .text-secondary {
+  font-size: 2rem;
+  margin: 2rem;
+}
+
+.projects__items {
+  width: 60vw;
+  margin: 2rem auto 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 2rem;
+}
+
+.projects__item {
+  position: relative;
+  border-bottom: 5px solid var(--oxford-blue);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.projects__item img {
+  width: 100%;
+}
+
+.projects__item::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--powder-blue);
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.projects__item:hover::after {
+  top: 0;
+  opacity: 0.9;
+}
+
+.projects__item:hover .projects__btn {
+  opacity: 1;
+}
+
+.projects__btns {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.projects__btn {
+  opacity: 0;
+  color: #000;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.projects__btn:hover {
+  color: var(--mint-cream);
+}
+
+.projects .social-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.projects footer {
+  -webkit-transform: rotate(90deg) translate(-3rem, -5rem);
+          transform: rotate(90deg) translate(-3rem, -5rem);
+}
+
+.about__bio-image p {
+  margin-bottom: 1rem;
+}
+
+.about__bio {
+  width: 70%;
+  font-size: 0.7rem;
+  margin: 3rem 0 auto 0;
+}
+
+.responsive-title {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.responsive-title .jobs__job {
+  margin-bottom: 0.6rem;
+}
+
+.jobs {
+  width: 60vw;
+  margin: 2rem auto 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 1.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.jobs__job {
+  background: var(--yale-blue);
+  padding: 0.5rem;
+  border-bottom: 5px solid var(--oxford-blue);
+  width: 70vw;
+}
+
+.jobs__job h2,
+.jobs__job h3 {
+  margin: 0.6rem 0;
+}
+
+.jobs__job h6 {
+  margin: 0.4rem 0;
+}
+
+.jobs__job ul li {
+  margin-left: 1rem;
+  padding: 0.2rem 0;
+}
+
+.jobs__job .skills-list ul {
+  list-style: none;
+}
+
+.jobs__job .skills-list ul > li::before {
+  content: "–";
+  /* en dash here */
+  position: absolute;
+  margin-left: -1.1em;
+  font-size: 0.7rem;
+}
+
+.jobs__job .skills-list {
+  font-size: 0.8rem;
+}
+
+skills-list, .jobs__job h2, .jobs__job h3, .jobs__job h6, .jobs__job p, .jobs__job ul li{
+  color: var(--mint-cream);
+}
+
+.about .social-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.about footer {
+  -webkit-transform: rotate(90deg) translate(-3rem, -5rem);
+          transform: rotate(90deg) translate(-3rem, -5rem);
+}
+
+.contact-area{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  width: 22em;
+  height: 25em;
+  border: 2px solid var(--yale-blue);
+  border-radius: 1em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+  padding: 1em;
+}
+
+form input, form textarea, form button {
+  border: 1px solid var(--yale-blue);
+  padding: 5px;
+  margin: 5px;
+}
+form button{
+  border-radius:.5em;
+  -webkit-border-radius:.5em;
+  -moz-border-radius:.5em;
+  -ms-border-radius:.5em;
+  -o-border-radius:.5em;
+  cursor: pointer;
+  text-align: center;
+  background-color: var(--yale-blue);
+  color: var(--mint-cream);
+}
+
+@media (max-width: 1090px) {
+
+    .brand-container {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+        padding: 0;
+    }
+
+    .logo {
+        margin-right: 0; /* Remove the right margin on smaller screens */
+        margin-bottom: 0; /* Add margin at the bottom for spacing */
+        width: 10em;
+    }
+
+header .brand{
+      line-height: 0.5em;
+      font-size: 2em;
+    }
+.brand-container ul li .text-secondary title responsive-text{
+    line-height: 0;
+    font-size: 0.8em;
+  }
+header .text-secondary{
+  font-size: 1.5em;
+}
+  header .btn{
+    display: block;
+  }
+
+  header .menu.active{
+    right: 0;
+  }
+
+  header .menu{
+    position: fixed;
+    background: var(--yale-blue);
+    flex-direction: column;
+    min-width: 350px;
+    height: 100vh;
+    top: 0;
+    right: -100%;
+    padding: 80px 50px;
+    transition-property: right;
+    transition: 0.5s;
+  }
+
+  header .menu .close-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 25px;
+  }
+
+  header .menu a{
+    display: block;
+    font-size: 30px;
+    margin: 20px;
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 600px) {
+    .text-spacing {
+        margin: 6em 3em;
+    }
+}
+
+@media (min-width: 900px) {
+    .text-align {
+        margin: 5em 4em;
+    }
+}
+
+@media (max-width: 580px) {
+
+  header{
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  header .brand, {
+    font-size: 2em;
+  }
+
+  .brand-container ul li .text-secondary title responsive-text{
+    line-height: 0;
+    font-size: 0.8em;
+  }
+
+  .brand-container ul{
+    margin: 0;
+    padding-top: 1em;
+  }
+
+    .brand-container {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+        padding: 0;
+    }
+
+    .logo {
+        margin-right: 0; /* Remove the right margin on smaller screens */
+        margin-bottom: 0; /* Add margin at the bottom for spacing */
+        width: 10em;
+    }
+
+  .section-main h1{
+    font-size: 50px;
+    line-height: 60px;
+  }
+
+  .title{
+    padding: 0;
+    font-size: 1.5em;
+  }
+}
